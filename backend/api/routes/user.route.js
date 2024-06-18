@@ -3,6 +3,8 @@ const { checkAuth } = require("../middlewares/auth.middlewares");
 
 const router = require("express").Router();
 
-router.get("/", checkAuth, getUsers);
+router.get("/",  getUsers);
 
 module.exports = router;
+
+//checkAuth,
