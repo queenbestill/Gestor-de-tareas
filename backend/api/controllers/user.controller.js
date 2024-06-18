@@ -11,8 +11,41 @@ async function getUsers(req, res) {
   }
 }
 
+async function getOneUser(req, res) {
+  try {
+    
+  } catch (error) {
+    
+  }
+}
 
+async function createUser(req, res) {
+  try {
+    
+  } catch (error) {
+    
+  }
+}
+
+async function getUserById(req, res) {
+  try {
+    
+  } catch (error) {
+    
+  }
+}
+
+async function deleteUser(req, res) {
+  try {
+  } catch (error) {
+    
+  }
+}
 
 module.exports = {
   getUsers,
+  getOneUser,
+  createUser,
+  getUserById,
+  deleteUser,
 };
