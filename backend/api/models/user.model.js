@@ -25,18 +25,7 @@ const User = sequelize.define(
       },
     },
   },
-<<<<<<< HEAD
-  password: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    validate: {
-      is: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
-    },
-  },
-});
-=======
   { timestamps: false }
 );
->>>>>>> origin/develop
 
 module.exports = User;
