@@ -1,8 +1,8 @@
-const { getUsers } = require("../controllers/user.controller");
+const { getUnidadFamiliar } = require("../controllers/unidadFamiliar.controller");
 const { checkAuth } = require("../middlewares/auth.middlewares");
 
 const router = require("express").Router();
 
-router.get("/", getUsers);
+router.get("/", getUnidadFamiliar);
 
 module.exports = router;
