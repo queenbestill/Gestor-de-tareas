@@ -18,7 +18,6 @@ async function getOneUser(req, res) {
     
   }
 }
-
 async function createUser(req, res) {
   try {
     
@@ -26,6 +25,7 @@ async function createUser(req, res) {
     
   }
 }
+
 
 async function getUserById(req, res) {
   try {
@@ -38,7 +38,7 @@ async function getUserById(req, res) {
 async function deleteUser(req, res) {
   try {
   } catch (error) {
-    
+
   }
 }
 
