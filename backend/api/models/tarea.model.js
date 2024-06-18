@@ -17,7 +17,7 @@ const Tareas = sequelize.define('Tareas', {
     allowNull: false
   },
   fecha_vencimiento: {
-    type: DataTypes.DATE
+    type: DataTypes.STRING(50),
   },
   prioridad: {
     type: DataTypes.ENUM('baja', 'media', 'alta')
@@ -30,6 +30,7 @@ const Tareas = sequelize.define('Tareas', {
  
 }, {
   tableName: 'Tareas',
+  timestamps: false,
 });
 
 module.exports = Tareas;
