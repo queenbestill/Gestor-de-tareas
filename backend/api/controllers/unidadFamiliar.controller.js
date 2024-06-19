@@ -2,7 +2,8 @@ const UnidadFamiliar = require("../models/unidadFamiliar.model");
 
 async function getUnidadFamiliar(req, res) {
   try {
-    const unidadFamiliar = await UnidadFamiliar.findAll();
+    const userId = req.body 
+    const unidadFamiliar = await UnidadFamiliar.findByPk(userId);
     if (!unidadFamiliar) return res.status(204).send([]);
 
     res.status(200).json(unidadFamiliar);

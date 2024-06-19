@@ -8,9 +8,9 @@ const { checkAuth } = require("../middlewares/auth.middlewares");
 
 const router = require("express").Router();
 
-router.get("/", getUnidadFamiliar);
-router.post("/", checkAuth, createUnidadFamiliar); 
-router.put("/:id", checkAuth, updateUnidadFamiliar); 
+router.get("/:id", getUnidadFamiliar);
+router.post("/:id", checkAuth, createUnidadFamiliar); 
+router.patch("/:id", checkAuth, updateUnidadFamiliar); 
 router.delete("/:id", checkAuth, deleteUnidadFamiliar); 
 
 module.exports = router;
