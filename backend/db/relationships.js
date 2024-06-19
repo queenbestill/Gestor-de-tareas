@@ -10,12 +10,11 @@ const initRelationships = () => {
 User.hasMany(Tareas)
 Tareas.belongsTo(User)
 
-
 UnidadFamiliar.hasMany(Tareas)
 Tareas.belongsTo(UnidadFamiliar)
 
 
-UnidadFamiliar.hasMany(User)
+UnidadFamiliar.hasMany(User, {onUpdate: 'CASCADE', onDelete: 'CASCADE'})
 User.belongsTo(UnidadFamiliar)
 
 module.exports = {

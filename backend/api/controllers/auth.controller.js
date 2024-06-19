@@ -51,6 +51,7 @@ const logIn = async (req, res) => {
         .send(">> Oops something went wrong, user or password incorrect.");
     }
   } catch (error) {
+    console.log(error)
     return res
       .status(500)
       .send(">> Oops something went wrong, user or password incorrect.");
