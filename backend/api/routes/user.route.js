@@ -7,7 +7,7 @@ router
   .get("/", getUsers)
   .get("/myprofile", checkAuth, getOneUser)
   .post("/", createUser)
-  .put("/", updateUser)
+  .put("/id", updateUser)
   .delete("/:id", deleteUser);
 
 
