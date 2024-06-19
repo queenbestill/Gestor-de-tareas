@@ -26,10 +26,6 @@ const signUp = async (req, res) => {
 const logIn = async (req, res) => {
   try {
     const user = await User.findOne({ where: { email: req.body.email } });
-    const userDetails = {
-      token: "",
-      name: "",
-    };
     if (user) {
       bcrypt.compare(req.body.password, user.password, (err, result) => {
         if (result) {
@@ -41,9 +37,7 @@ const logIn = async (req, res) => {
               expiresIn: "1y",
             }
           );
-          userDetails.token = token;
-          userDetails.name = user.name;
-          return res.status(200).json({ userDetails });
+          return res.status(200).json({message: 'Logged successfully', token });
         }
         return res
           .status(400)
@@ -55,6 +49,7 @@ const logIn = async (req, res) => {
         .send(">> Oops something went wrong, user or password incorrect.");
     }
   } catch (error) {
+    console.log(error)
     return res
       .status(400)
       .send(">> Oops something went wrong, user or password incorrect.");
