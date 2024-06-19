@@ -2,7 +2,6 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/user.model");
 
 function checkAuth(req, res, next) {
-  console.log(req);
   if (!req.headers.authorization)
     return res.status(401).send("Token not found"); // comprobamos que nos envia el token en el req.headers
 

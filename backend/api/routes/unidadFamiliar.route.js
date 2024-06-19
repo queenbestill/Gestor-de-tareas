@@ -8,8 +8,8 @@ const { checkAuth } = require("../middlewares/auth.middlewares");
 
 const router = require("express").Router();
 
-router.get("/:id", getUnidadFamiliar);
-router.post("/:id", checkAuth, createUnidadFamiliar); 
+router.get("/:id", checkAuth, getUnidadFamiliar);
+router.post("/", checkAuth, createUnidadFamiliar); 
 router.patch("/:id", checkAuth, updateUnidadFamiliar); 
 router.delete("/:id", checkAuth, deleteUnidadFamiliar); 
 

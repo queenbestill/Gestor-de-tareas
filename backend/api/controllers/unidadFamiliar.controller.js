@@ -2,8 +2,7 @@ const UnidadFamiliar = require("../models/unidadFamiliar.model");
 
 async function getUnidadFamiliar(req, res) {
   try {
-    const userId = req.body 
-    const unidadFamiliar = await UnidadFamiliar.findByPk(userId);
+    const unidadFamiliar = await UnidadFamiliar.findByPk(req.params.id);
     if (!unidadFamiliar) return res.status(204).send([]);
 
     res.status(200).json(unidadFamiliar);
@@ -14,11 +13,11 @@ async function getUnidadFamiliar(req, res) {
 
 async function createUnidadFamiliar(req, res) {
   try {
-    const { nombre } = req.body;
+    const nombre = req.body;
+    const nuevaUnidadFamiliar = await UnidadFamiliar.create(nombre);
+
     if (!nombre)
       return res.status(400).json({ message: "Nombre es requerido" });
-
-    const nuevaUnidadFamiliar = await UnidadFamiliar.create({ nombre });
     res.status(201).json(nuevaUnidadFamiliar);
   } catch (error) {
     res.status(500).send(error);
