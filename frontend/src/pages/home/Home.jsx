@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div>
-      <header className="header">
+      <header className="header-area">
         <div className="container">
-          <nav className="navbar">
+          <nav className="main-nav">
             <Link to="/" className="logo">
-              EasyTask
+              <h4>EasyTask</h4>
             </Link>
             <ul className="nav">
               <li>
@@ -24,71 +24,48 @@ function Home() {
                 <a href="#vertareas">Ver tareas</a>
               </li>
               <li>
-                <a href="#login" className="btn">
+                <Link to="/login" className="login-button">
                   Log in
-                </a>
+                </Link>
               </li>
+              
             </ul>
+            <div className="menu-trigger">
+              <span>Menu</span>
+            </div>
           </nav>
         </div>
       </header>
 
-      <section className="banner" id="top">
+      <section className="main-banner" id="top">
         <div className="container">
           <div className="content">
-            <h6>Bienvenido a EasyTask</h6>
-            <h2>
-              Tareas del <em>Hogar</em> <span>más</span> simples
-            </h2>
-            <p>Aquí es donde tus tareas se hacen más fácil.</p>
-            <form id="search" action="#" method="GET">
-              <input
-                type="text"
-                name="address"
-                placeholder="Escribe tu tarea"
-                required
+            <div className="text">
+              <h6>Bienvenido a EasyTask</h6>
+              <h2>
+                Tareas del <em>Hogar</em> <span>más</span> simples
+              </h2>
+              <p>Aquí es donde tus tareas se hacen más fácil.</p>
+              <form id="search" action="#" method="GET">
+                <input
+                  type="text"
+                  name="address"
+                  className="email"
+                  placeholder="Escribe tu tarea"
+                  autoComplete="on"
+                  required
+                />
+                <button type="submit" className="main-button">
+                  Empieza
+                </button>
+              </form>
+            </div>
+            <div className="image">
+              <img
+                src="hombre limpiando.jpg"
+                alt="Hombre limpiando"
+                className="image"
               />
-              <button type="submit">Empieza</button>
-            </form>
-          </div>
-          <img
-            src="/images/hombre-limpiando.jpg"
-            className="image"
-            alt="Hombre limpiando"
-          />
-        </div>
-      </section>
-
-      <section className="about" id="about">
-        <div className="container">
-          <h3>Qué podrás lograr</h3>
-          <div className="row">
-            <img
-              src="/images/about-left-image.png"
-              alt="About Us"
-              className="image-left"
-            />
-            <div className="services">
-              <div className="service">
-                <img src="/images/service-icon-01.png" alt="Service 1" />
-                <h4>Resuelve tareas fácilmente</h4>
-                
-              </div>
-              <div className="service">
-                <img src="/images/service-icon-02.png" alt="Service 2" />
-                <h4>Organiza el trabajo</h4>
-           
-              </div>
-              <div className="service">
-                <img src="/images/service-icon-03.png" alt="Service 3" />
-                <h4>Comparte tus tareas</h4>
-                
-              </div>
-              <div className="service">
-                <img src="/images/service-icon-04.png" alt="Service 4" />
-                <h4>Disfruta más tiempo libre</h4>
-        
-              </div>
             </div>
           </div>
         </div>
