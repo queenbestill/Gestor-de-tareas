@@ -1,4 +1,9 @@
-/* src/pages/login/login.css */
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    margin: 100px;
+}
 
 .login-container {
     width: 300px;

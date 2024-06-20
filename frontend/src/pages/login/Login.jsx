@@ -18,8 +18,9 @@ function Login() {
   };
 
   return (
-    <header className="container"><div className="izquierda">
-        <img src="/frontend/public/ilustracion3.jpg" alt="ilustration" />
+    <header className="container">
+      <div className="izquierda">
+        <img src="/public/ilustracion3.jpg" alt="ilustration" />
       </div>
       <div>
         <div className="login-container">
