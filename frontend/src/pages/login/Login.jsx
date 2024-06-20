@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import '../login/Login.css'
 import { login } from "../../services/auth.service";
+import { UserContext } from "../../context/userContext";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const{ user, setUser} = useContext(UserContext)
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,7 +17,10 @@ function Login() {
     const response = await login(email, password)
 
     localStorage.setItem('token', response.token)
-    console.log(response)
+    setUser(response.user)
+    
+    navigate('/home')
+    console.log(user)
 
   };
 
