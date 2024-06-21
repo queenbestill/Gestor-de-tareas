@@ -7,6 +7,8 @@ import Registro from "../pages/registro/Registro";
 import Creargrupo from "../pages/creargrupo/CrearGrupo";
 import Listas from "../pages/listas/Listas";
 import Mistareas from "../pages/MisTareas/MisTareas";
+import Root from '../layouts/Layout'
+
 import Tareas from "../pages/MisTareas/MisTareas";
 
 const router = createBrowserRouter([
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/tareas",
         element: <Tareas />,
+      },
+      {
+        path: "/mistareas",
+        element: <Mistareas />,
       },
     ],
   },
