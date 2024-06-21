@@ -80,10 +80,9 @@ async function deleteUser(req, res) {
 
 module.exports = {
   getUsers,
-  getOneUser,
+  getUserById,
   getMyProfileByToken,
   createUser,
   updateUser,
-  getUserById,
   deleteUser,
 };

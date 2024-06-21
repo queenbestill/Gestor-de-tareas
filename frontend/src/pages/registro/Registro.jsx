@@ -43,14 +43,14 @@ function Registro() {
         <h1>Regístrate</h1>
         <h2>¡Estás a un clic ordenar tus tareas de la forma más óptima!</h2>
         <form className="form">
-          <input
-            className="email"
+          {<input
+            /* className="email" */
             placeholder="¿Cuál es tu e-mail?"
             type="email"
             onChange={function (event) {
               setEmail(event.target.value);
             }}
-          />
+          />}
           <input
             placeholder="¿Cómo te llamas?"
             onChange={function (event) {
