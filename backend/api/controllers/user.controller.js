@@ -11,14 +11,28 @@ async function getUsers(req, res) {
   }
 }
 
-async function getOneUser(req, res) {
-  try {
-    const user = await User.findByPk(res.locals.user.id);
-    if (!user) return res.status(404).send("Not found");
 
+async function getUserById(req, res) {
+  try {
+    const user = await User.findByPk(req.params.id);
+    if (!user) return res.status(404).send("Not found");
     res.status(200).json(user);
   } catch (error) {
     res.status(500).send(error);
+  }
+}
+
+async function getMyProfileByToken (req, res){
+  try {
+      
+      const user = await User.findByPk(res.locals.user.id)
+
+      if(!user) return res.status(404).send('User not found!')
+
+      res.status(200).json(user)
+
+  } catch (error) {
+      res.status(500).send(error)
   }
 }
 
@@ -51,16 +65,6 @@ async function updateUser(req, res) {
   }
 }
 
-async function getUserById(req, res) {
-  try {
-    const user = await User.findByPk(req.params.id);
-    if (!user) return res.status(404).send("Not found");
-    res.status(200).json(user);
-  } catch (error) {
-    res.status(500).send(error);
-  }
-}
-
 async function deleteUser(req, res) {
   try {
     const user = await User.findByPk(req.params.id);
@@ -73,9 +77,11 @@ async function deleteUser(req, res) {
   }
 }
 
+
 module.exports = {
   getUsers,
   getOneUser,
+  getMyProfileByToken,
   createUser,
   updateUser,
   getUserById,

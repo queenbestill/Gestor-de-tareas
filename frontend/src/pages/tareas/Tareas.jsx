@@ -1,9 +1,26 @@
 import React from 'react'
+import CheckboxList from "../../components/TareaCheckBox";
+//import { useNavigate } from "react-router-dom";
+
 
 function Tareas() {
   return (
-    <div>Tareas</div>
+    
+    <div id="container">
+        <CheckboxList/>
+    </div>
+  
   )
 }
 
-export default Tareas
+function Tareas2() {
+  return (
+    
+    <div id="container">
+        <CheckboxList/>
+    </div>
+  
+  )
+}
+
+export default Tareas;

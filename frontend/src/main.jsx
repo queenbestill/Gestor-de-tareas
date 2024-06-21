@@ -10,11 +10,14 @@ import '@fontsource/roboto/700.css';
 
 
 import "./index.css";
+import ContextWrapper from "./context/userContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ContextWrapper>
+      <RouterProvider router={router} />
+    </ContextWrapper>
   </React.StrictMode>
 );
 

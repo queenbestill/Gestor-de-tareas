@@ -6,7 +6,7 @@ import Login from "../pages/login/Login";
 import Registro from "../pages/registro/Registro";
 import Creargrupo from "../pages/creargrupo/CrearGrupo";
 import Listas from "../pages/listas/Listas";
-import Mistareas from "../pages/tareas/Tareas";
+import Tareas from "../pages/tareas/Tareas";
 import Root from "../layouts/Layout";
 
 const router = createBrowserRouter([
@@ -35,8 +35,8 @@ const router = createBrowserRouter([
         element: <Listas />,
       },
       {
-        path: "/mistareas",
-        element: <Mistareas />,
+        path: "/tareas",
+        element: <Tareas />,
       },
     ],
   },
