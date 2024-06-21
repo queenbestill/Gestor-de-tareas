@@ -1,54 +1,61 @@
-import React from 'react'
-import '../listas/Listas.css'
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import "../listas/Listas.css";
+import { UserContext } from "../../context/userContext";
 
-function crearGrupo() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const{ user, setUser} = useContext(UserContext)
-  const navigate = useNavigate()
+function CrearGrupo() {
+  const [groupName, setGroupName] = useState("");
+  const [stays, setStays] = useState("");
+  const [members, setMembers] = useState("");
+  const { user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
-    const response = await login(email, password)
-
-    localStorage.setItem('token', response.token)
-    setUser(response.user)
-    
-    navigate('/home')
-    console.log(user)
-
+    console.log("Group Name:", groupName);
+    console.log("Stays:", stays);
+    console.log("Members:", members);
+    navigate("/home");
+    console.log(user);
   };
 
-function Listas() {
   return (
     <div>
       <header className="container">
         <div className="izquierda">
-          <img src="/frontend/public/ilustracion3.jpg" alt="ilustration" />
+          <img src="/frontend/public/ilustracion3.jpg" alt="illustration" />
         </div>
         <div>
           <div className="login-container">
             <h1>Crea tu grupo familiar</h1>
             <form onSubmit={handleSubmit}>
               <div className="input-group">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="groupName">Nombre del Grupo</label>
                 <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  type="text"
+                  id="groupName"
+                  value={groupName}
+                  onChange={(e) => setGroupName(e.target.value)}
                   required
                 />
               </div>
               <div className="input-group">
-                <label htmlFor="password">Password</label>
+                <label htmlFor="stays">Estancias</label>
                 <input
-                  type="password"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  type="text"
+                  id="stays"
+                  value={stays}
+                  onChange={(e) => setStays(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="input-group">
+                <label htmlFor="members">Miembros</label>
+                <input
+                  type="text"
+                  id="members"
+                  value={members}
+                  onChange={(e) => setMembers(e.target.value)}
                   required
                 />
               </div>
@@ -61,4 +68,4 @@ function Listas() {
   );
 }
 
-export default Listas
+export default CrearGrupo;
