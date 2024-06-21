@@ -7,11 +7,12 @@ import Registro from "../pages/registro/Registro";
 import Creargrupo from "../pages/creargrupo/CrearGrupo";
 import Listas from "../pages/listas/Listas";
 import Mistareas from "../pages/tareas/Tareas";
+import Root from "../layouts/Layout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Root />,
     children: [
       {
         path: "/home",
