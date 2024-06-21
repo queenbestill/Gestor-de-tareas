@@ -12,7 +12,7 @@ import Tareas from "../pages/MisTareas/MisTareas";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Root />,
     children: [
       {
         path: "/home",
@@ -35,8 +35,8 @@ const router = createBrowserRouter([
         element: <Listas />,
       },
       {
-        path: "/mistareas",
-        element: <Mistareas />,
+        path: "/tareas",
+        element: <Tareas />,
       },
     ],
   },

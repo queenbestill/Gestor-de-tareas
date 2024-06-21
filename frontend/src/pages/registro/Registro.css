@@ -1,0 +1,68 @@
+.registercontainer {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: hsl(0, 48%, 51%); 
+}
+
+.image {
+  height: 100vh;
+  width: 40%;
+
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 60%;
+  align-self: center;
+  background-color: rgb(194, 223, 171);
+}
+
+.card h1 {
+  text-align: center;
+  font-size: 2rem; 
+  color: #333333; 
+}
+
+.card h2 {
+  text-align: center;
+  font-size: 1.5rem; 
+  color: #333333; 
+}
+
+.card input {
+  margin:1vh;
+  text-align: center;
+  font-size: 1rem; 
+  color: #333333;
+  background-color: rgb(255, 249, 243); 
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.form {
+  border-radius: 2%;
+  padding: 3vh;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100;
+  width: 60%;
+  background-color: rgb(255, 255, 255);
+}
+
+.registro {
+  text-align: center;
+  margin-top: 4%;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+  font-size: 1.5rem; 
+  color: #ffffff; 
+  background-color: #3c6942;
+  
+}

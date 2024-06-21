@@ -1,10 +1,12 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import AppBarResponsive from "../components/AppBarResponsive";
 
 function Root() {
   return (
-    <div>
-      <div>I am the Header</div>
+    <div id="container">
+        <AppBarResponsive/>
+
       <section>
         <Outlet />
       </section>
