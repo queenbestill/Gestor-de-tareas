@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import "../listas/Listas.css";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/userContext";
 
 function CrearGrupo() {
@@ -23,7 +23,7 @@ function CrearGrupo() {
     <div>
       <header className="container">
         <div className="izquierda">
-          <img src="/frontend/public/ilustracion3.jpg" alt="illustration" />
+          <img src="/ilustracion3.jpg" alt="illustration" />
         </div>
         <div>
           <div className="login-container">

@@ -25,9 +25,10 @@ function Login() {
   };
 
   return (
-    <header className="container">
+    <div>
+      <header className="container">
       <div className="izquierda">
-        <img src="/public/ilustracion3.jpg" alt="ilustration" />
+        <img src="/ilustracion3.jpg" alt="ilustration" />
       </div>
       <div>
         <div className="login-container">
@@ -58,6 +59,7 @@ function Login() {
         </div>
       </div>
     </header>
+    </div>
   );
 }
 

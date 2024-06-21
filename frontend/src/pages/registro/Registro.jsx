@@ -38,7 +38,7 @@ function Registro() {
   return (
     <div className="registercontainer">
      
-      <img src="../../../public/ilustracion3.jpeg" className="image" />
+      <img src="public/ilustracion3.jpeg" className="image" />
       <div className="card">
         <h1>Regístrate</h1>
         <h2>¡Estás a un clic ordenar tus tareas de la forma más óptima!</h2>
