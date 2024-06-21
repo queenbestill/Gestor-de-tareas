@@ -1,4 +1,6 @@
 const Tareas = require("../models/tarea.model");
+const User = require("../models/user.model");
+
 
 // NECESITO GET TAREAS BY... QUE?  EN PRINCIPIO NO HACE FALTA HACER MAS GET, UTILIZAR UN QUERY PARAM
 //GET ALL TAREAS
@@ -27,6 +29,20 @@ async function getOneTarea(req, res) {
 	} catch (error) {
 		res.status(500).send(error.message)
 	}
+}
+
+async function getTareasByUser(req, res) {
+  try {
+	const user = await User.findByPk(res.locals.user.id)
+    const tareas = await Tareas.findAll({where: {userId: user.id}}); // DUDAS DE findByPk
+    if (tareas.length > 0) {
+      return res.status(200).json(tareas);
+    } else {
+      return res.status(404).send("No se han encontrado tareas asignadas a este usuario");
+    }
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
 }
 
 
@@ -83,6 +99,7 @@ async function deleteTarea(req, res) {
 module.exports = {
   getTareas,
   getOneTarea,
+  getTareasByUser,
   createTarea,
   updateTarea,
   deleteTarea,
