@@ -38,8 +38,8 @@ export default function CrearTareaModal({ open, onClose }) {
 
   return (
     <Dialog open={open} onClose={onClose}>
-      <div style={{ padding: "20px" }}>
-        <h2>Crear Nueva Tarea</h2>
+      <div style={{ padding: '20px' }}>
+        <h2 style={{ textAlign: 'center' }}> Añade una tarea a tu lista 📋</h2>
         <TextField
           label="Título"
           fullWidth
@@ -54,28 +54,13 @@ export default function CrearTareaModal({ open, onClose }) {
             onChange={(e) => setCategoria(e.target.value)}
             fullWidth
           >
-            <MenuItem value="cocina">Cocina</MenuItem>
-            <MenuItem value="dormitorio">Dormitorio</MenuItem>
-            <MenuItem value="salon">Salón</MenuItem>
-            <MenuItem value="bano">Baño</MenuItem>
-            <MenuItem value="aseo">Aseo</MenuItem>
-            <MenuItem value="patio">Patio</MenuItem>
-            <MenuItem value="Comedor">Comedor</MenuItem>
-            <MenuItem value="Garaje">Garaje</MenuItem>
-            <MenuItem value="Lavadero">Lavadero</MenuItem>
-            <MenuItem value="Baño en Suite">Baño en Suite</MenuItem>
-            <MenuItem value="Terraza">Terraza</MenuItem>
-            <MenuItem value="Jardín">Jardín</MenuItem>
-            <MenuItem value="Habitación 1">Habitación 1</MenuItem>
-            <MenuItem value="Habitación 2">Habitación 2</MenuItem>
-            <MenuItem value="Habitación 3">Habitación 3</MenuItem>
-            <MenuItem value="Habitación 4">Habitación 4</MenuItem>
-            <MenuItem value="Habitación 5">Habitación 5</MenuItem>
-            <MenuItem value="Habitación 6">Habitación 6</MenuItem>
-            <MenuItem value="Habitación 7">Habitación 7</MenuItem>
-            <MenuItem value="Habitación 8">Habitación 8</MenuItem>
-            <MenuItem value="Habitación 9">Habitación 9</MenuItem>
-            <MenuItem value="Habitación 10">Habitación 10</MenuItem>
+            <MenuItem value="Cocina 🍳">Cocina 🍳</MenuItem>
+            <MenuItem value="Dormitorio 🛏️">Dormitorio 🛏️</MenuItem>
+            <MenuItem value="Salón 🛋️">Salón 🛋️</MenuItem>
+            <MenuItem value="Baño 🚽">Baño 🚽</MenuItem>
+            <MenuItem value="Aseo 🚿">Aseo 🚿</MenuItem>
+            <MenuItem value="Patio 🎾">Patio 🎾</MenuItem>
+            <MenuItem value="Estudio 📚">Estudio 📚</MenuItem>
           </Select>
         </FormControl>
         <TextField
@@ -113,14 +98,10 @@ export default function CrearTareaModal({ open, onClose }) {
             <MenuItem value="completada">Completada</MenuItem>
           </Select>
         </FormControl>
-        <Button
-          variant="outlined"
-          onClick={onClose}
-          style={{ marginRight: "10px" }}
-        >
+        <Button variant="outlined" onClick={onClose} style={{ marginRight: '10px', borderRadius: '8px',  borderColor: 'green', color: 'green', }}>
           Cancelar
         </Button>
-        <Button variant="contained" onClick={handleCrearTarea}>
+        <Button variant="contained" onClick={handleCrearTarea} style={{ backgroundColor: 'green', color: 'white', borderRadius: '8px' }}>
           Crear
         </Button>
       </div>

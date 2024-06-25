@@ -69,7 +69,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section> 
       HOME
     </div>
   );
