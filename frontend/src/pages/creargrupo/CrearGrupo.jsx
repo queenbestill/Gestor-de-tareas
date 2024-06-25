@@ -42,7 +42,7 @@ function CrearGrupo() {
 
     const response = await createGroup(groupName, stays, members);
 
-    navigate("/home");
+    navigate("/listas");
   };
 
   return (

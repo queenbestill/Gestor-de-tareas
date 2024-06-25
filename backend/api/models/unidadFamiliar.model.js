@@ -1,4 +1,4 @@
-const { DataTypes } = require("sequelize");
+const { Sequelize, Model, DataTypes } = require("sequelize");
 const sequelize = require("../../db");
 
 const UnidadFamiliar = sequelize.define(

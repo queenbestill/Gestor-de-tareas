@@ -63,7 +63,6 @@ export default function CrearTareaModal({ open, onClose }) {
             <MenuItem value="Comedor">Comedor</MenuItem>
             <MenuItem value="Garaje">Garaje</MenuItem>
             <MenuItem value="Lavadero">Lavadero</MenuItem>
-            <MenuItem value="Baño de Servicio">Baño de Servicio</MenuItem>
             <MenuItem value="Baño en Suite">Baño en Suite</MenuItem>
             <MenuItem value="Terraza">Terraza</MenuItem>
             <MenuItem value="Jardín">Jardín</MenuItem>
