@@ -7,12 +7,9 @@ import Home from "./pages/home/Home"
 import Login from "./pages/login/Login"; 
 
 function App() {
-  const [user, setUser] = useState("");
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
-    <Outlet/>
-    </UserContext.Provider>
+    <div>home</div>
   );
 }
 

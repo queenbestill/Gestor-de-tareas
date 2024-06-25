@@ -1,0 +1,115 @@
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+button {
+  display: block;
+  width: 200px;
+  margin: 0 auto 20px;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.taskStyle {
+  min-width: 150px;  
+  max-width: 300px;  
+  width: 100%;    
+  padding: 10px;   
+  box-sizing: border-box; 
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filters select {
+  flex: 1; 
+  margin-right: 10px; 
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.filters select:last-child {
+  margin-right: 0;
+}
+
+
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.task-table th,
+.task-table td {
+  border: 1px solid orange;
+  padding: 10px;
+  text-align: center;
+}
+
+.task-table th {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+}
+
+.task input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.task span {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.task span:hover {
+  text-decoration: underline;
+}
+
+.task.completed span {
+  color: #888;
+  text-decoration: line-through;
+}
+
+button.back {
+  display: block;
+  width: 200px;
+  margin: 20px auto 0;
+  padding: 10px;
+  background-color: #6c757d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.back:hover {
+  background-color: #5a6268;
+}
