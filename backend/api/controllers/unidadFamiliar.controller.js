@@ -13,10 +13,8 @@ async function getUnidadFamiliar(req, res) {
 
 async function createUnidadFamiliar(req, res) {
   try {
-    const { nombre, estancias, miembros } = req.body;
-    const nuevaUnidadFamiliar = await UnidadFamiliar.create(nombre,
-      areas: JSON.stringify(areas),
-      miembros: JSON.stringify(miembros);
+    const nombre = req.body
+    const nuevaUnidadFamiliar = await UnidadFamiliar.create(nombre)
 
     if (!nombre || !estancias.length || !miembros.length)
       return res
