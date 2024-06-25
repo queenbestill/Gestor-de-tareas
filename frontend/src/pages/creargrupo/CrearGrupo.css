@@ -1,44 +1,71 @@
-.login-container {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+.container-crear-grupo {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 100vh; /* Tomar toda la altura de la pantalla */
+  padding: 20px; /* Agregar algo de margen alrededor */
+  box-sizing: border-box;
 }
 
-.login-container h2 {
-    margin-bottom: 20px;
+.izquierda {
+  flex: 1; /* Tomar espacio igual */
+  display: flex;
+  justify-content: center; /* Centrar la imagen horizontalmente */
+  align-items: center; /* Centrar la imagen verticalmente */
+  margin-right: 10px; /* Reducir el margen derecho para acercar al formulario */
+}
+
+.izquierda img {
+  max-width: 100%; /* Asegurar que la imagen sea responsiva */
+  height: auto;
+  max-height: 80%; /* Limitar la altura máxima para evitar excesivo tamaño */
+}
+
+.container-crear-grupo-titulo {
+  flex: 1.5; /* Tomar un poco más de espacio que la imagen */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar los elementos del formulario */
+  font-size: large;
+}
+
+.container-crear-grupo-titulo h1 {
+  text-align: center;
+  margin-bottom: 20px; 
+  font-size: xx-large;
+
 }
 
 .input-group {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
+  width: 90%; /* Aumentar el ancho de los elementos de entrada */
 }
 
 .input-group label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .input-group input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 10px; /* Aumentar el padding para una mejor apariencia y tacto */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: white;
-    cursor: pointer;
+  width: 90%; /* Hacer coincidir el ancho de la entrada */
+  padding: 12px; /* Aumentar el padding para un botón más grande y cómodo */
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px; /* Espacio arriba del botón */
+  font-size: large;
 }
 
 button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }

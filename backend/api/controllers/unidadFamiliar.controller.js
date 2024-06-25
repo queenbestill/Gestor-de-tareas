@@ -13,11 +13,15 @@ async function getUnidadFamiliar(req, res) {
 
 async function createUnidadFamiliar(req, res) {
   try {
-    const nombre = req.body;
-    const nuevaUnidadFamiliar = await UnidadFamiliar.create(nombre);
+    const { nombre, estancias, miembros } = req.body;
+    const nuevaUnidadFamiliar = await UnidadFamiliar.create(nombre,
+      areas: JSON.stringify(areas),
+      miembros: JSON.stringify(miembros);
 
-    if (!nombre)
-      return res.status(400).json({ message: "Nombre es requerido" });
+    if (!nombre || !estancias.length || !miembros.length)
+      return res
+        .status(400)
+        .json({ message: "Todos los campos son requeridos" });
     res.status(201).json(nuevaUnidadFamiliar);
   } catch (error) {
     res.status(500).send(error);

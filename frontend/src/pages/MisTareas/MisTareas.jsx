@@ -72,7 +72,7 @@ const Tareas = () => {
   });
 
   return (
-    <div className="container">
+    <div className="task-container">
       <h1>Mis Tareas</h1>
       <button
         onClick={() => {
