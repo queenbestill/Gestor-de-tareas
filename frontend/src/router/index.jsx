@@ -6,12 +6,15 @@ import Login from "../pages/login/Login";
 import Registro from "../pages/registro/Registro";
 import Creargrupo from "../pages/creargrupo/CrearGrupo";
 import Listas from "../pages/listas/Listas";
-import Mistareas from "../pages/tareas/Tareas";
+import Mistareas from "../pages/MisTareas/MisTareas";
+import Root from '../layouts/Layout'
+
+import Tareas from "../pages/MisTareas/MisTareas";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Root />,
     children: [
       {
         path: "/home",
@@ -32,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/listas",
         element: <Listas />,
+      },
+      {
+        path: "/tareas",
+        element: <Tareas />,
       },
       {
         path: "/mistareas",

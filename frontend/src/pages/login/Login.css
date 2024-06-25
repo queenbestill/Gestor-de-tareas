@@ -1,4 +1,10 @@
-/* src/pages/login/login.css */
+.container{
+    display: flex;
+    flex-direction: row;
+    margin: 100px;
+    height: 100vh;
+    width: 40%;
+}
 
 .login-container {
     width: 300px;
@@ -36,11 +42,11 @@ button {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007BFF;
+    background-color: #3c6942
     color: white;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #3c6942
 }
