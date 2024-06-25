@@ -30,7 +30,7 @@ export default function CheckboxList({ tareas, handleToggle }) {
             style={{
               width: "100%",
               height: "100%",
-              backgroundColor: "white",
+              backgroundColor: "rgba(255, 255, 255, 0.9)",
               borderRadius: "15px",
               boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
               padding: "20px",
@@ -40,7 +40,7 @@ export default function CheckboxList({ tareas, handleToggle }) {
           >
             <div style={{ marginBottom: "20px" }}>
               <h3>{categoria}</h3>
-              <List sx={{ width: "100%", bgcolor: "background.paper" }}>
+              <List sx={{ width: "100%", bgcolor: "background.paper", borderRadius: "10px" }}>
                 {tareas
                   .filter((tarea) => tarea.categoria === categoria)
                   .map((tarea) => {

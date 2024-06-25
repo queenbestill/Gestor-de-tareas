@@ -27,7 +27,7 @@ function Tareas() {
   };
 
   return (
-    <div style={{ padding: '10px' }}>
+    <div style={{ padding: '10px', backgroundImage: 'url("/FondoTareas.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
       <div style={{ display: 'flex', marginBottom: '10px' }}>
         <NuevaTareaButton />
         <TodasMisTareasButton />
