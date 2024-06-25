@@ -48,15 +48,20 @@ export default function CrearTareaModal({ open, onClose }) {
           margin="normal"
         />
         <FormControl fullWidth margin="normal">
-          <InputLabel>Categoría</InputLabel>
+          <InputLabel>Estancia</InputLabel>
           <Select
             value={categoria}
             onChange={(e) => setCategoria(e.target.value)}
             fullWidth
           >
-            <MenuItem value="trabajo">Trabajo</MenuItem>
-            <MenuItem value="estudios">Estudios</MenuItem>
-            <MenuItem value="personal">Personal</MenuItem>
+            <MenuItem value="cocina">Cocina</MenuItem>
+            <MenuItem value="dormitorio">Dormitorio</MenuItem>
+            <MenuItem value="salon">Salón</MenuItem>
+            <MenuItem value="baño">Salón</MenuItem>
+            <MenuItem value="salon">Baño</MenuItem>
+            <MenuItem value="aseo">Aseo</MenuItem>
+            <MenuItem value="patio">Patio</MenuItem>
+            <MenuItem value="estudio">Estudio</MenuItem>
           </Select>
         </FormControl>
         <TextField
