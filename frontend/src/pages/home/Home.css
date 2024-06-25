@@ -1,9 +1,4 @@
-/* General Styles */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-}
+
 
 /* Header Styles */
 .header-area {
@@ -11,8 +6,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   position: fixed;
   width: 100%;
-  top: 0;
-  z-index: 1000;
+
 }
 
 .header-area .container {

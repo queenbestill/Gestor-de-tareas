@@ -8,8 +8,16 @@ export default function TareasFamiliaButton() { //OJO, NO SE PONERLO  QUE QUEDE 
       onClick={() => { //OJO, CONECTAR CON EL MODAL DE CREAR TAREA
         alert('clicked');
       }}
+      style={{
+        width: '200px',
+        height: '50px', 
+        backgroundColor: 'green', 
+        borderRadius: '10px', 
+        color: 'white', 
+        border: 'none' 
+      }}
     >
-      Ver las Tareas de la Familia
+      Tareas de la Familia
     </Button>
     </div>
   );

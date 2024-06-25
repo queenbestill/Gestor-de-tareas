@@ -28,9 +28,9 @@ function AppBarResponsive() {
  
   
     return (
-      <AppBar position="static" >
+      <AppBar position="static" sx={{background:'black'}}>
         <Container maxWidth="xl">
-          <Toolbar disableGutters>
+          <Toolbar disableGutters> 
             <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
             <Typography
               variant="h6"
@@ -47,7 +47,7 @@ function AppBarResponsive() {
                 textDecoration: 'none',
               }}
             >
-              LOGO
+              Easy Task
             </Typography>
   
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -109,7 +109,7 @@ function AppBarResponsive() {
             {isLoggedIn ? (
             <>
             
-              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', alignItems:'center', justifyContent: 'center', gap:'20px' } }}>
+              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', alignItems:'center', justifyContent: 'center', gap:'20px'} }}>
 
                   <AddCircleIcon sx={{height: '50px', width: '40px'}}/>
                

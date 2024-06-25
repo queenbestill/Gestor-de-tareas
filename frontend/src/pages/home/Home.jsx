@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div>
-      <header className="header-area">
+     {/*  <div className="header-area">
         <div className="container">
           <nav className="main-nav">
             <Link to="/" className="logo">
@@ -35,7 +35,7 @@ function Home() {
             </div>
           </nav>
         </div>
-      </header>
+      </div>
 
       <section className="main-banner" id="top">
         <div className="container">
@@ -69,7 +69,8 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      HOME
     </div>
   );
 }
