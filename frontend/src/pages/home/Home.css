@@ -73,7 +73,6 @@ body {
 /* Main Banner Styles */
 .main-banner {
   background: linear-gradient(to bottom, #03a4ed, #fe3f40);
-  padding: 100px 0;
   color: #fff;
   text-align: center;
   display: flex;
@@ -167,7 +166,7 @@ form .main-button:hover {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  
 }
 
 /* Responsive Styles */

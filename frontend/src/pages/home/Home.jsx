@@ -62,8 +62,8 @@ function Home() {
             </div>
             <div className="image">
               <img
-                src="hombre limpiando.jpg"
-                alt="Hombre limpiando"
+                src="hombre reunion.png"
+                alt="Hombre reunion"
                 className="image"
               />
             </div>
