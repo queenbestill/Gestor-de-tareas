@@ -3,7 +3,7 @@ import CheckboxList from "../../components/TareaCheckBox";
 import NuevaTareaButton from "../../components/NuevaTareaButton";
 import TodasMisTareasButton from "../../components/VerTodasLasTareasButton";
 import TareasFamiliaButton from "../../components/TareasFamiliaButton";
-import { obtenerMisTareas } from '../../services/tareas.service'; // Asegúrate de importar la función correcta
+import { obtenerMisTareas } from '../../services/tareas.service'; // Asegúrate de importar la función correcta ESTO PROBABLEMENTE HAYA QUE QUIETARLO, QUIE HACE STO?????
 
 function Tareas() {
   const [tareas, setTareas] = useState([]);
@@ -31,7 +31,7 @@ function Tareas() {
       <div style={{ display: 'flex', marginBottom: '10px' }}>
         <NuevaTareaButton />
         <TodasMisTareasButton />
-        <TareasFamiliaButton />
+        {/* <TareasFamiliaButton /> */}
       </div>
       <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
         <CheckboxList tareas={tareas} handleToggle={handleToggle} />
