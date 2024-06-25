@@ -39,7 +39,7 @@ export default function CrearTareaModal({ open, onClose }) {
   return (
     <Dialog open={open} onClose={onClose}>
       <div style={{ padding: '20px' }}>
-        <h2>Crear Nueva Tarea</h2>
+        <h2 style={{ textAlign: 'center' }}> Añade una tarea a tu lista 📋</h2>
         <TextField
           label="Título"
           fullWidth
@@ -54,14 +54,13 @@ export default function CrearTareaModal({ open, onClose }) {
             onChange={(e) => setCategoria(e.target.value)}
             fullWidth
           >
-            <MenuItem value="cocina">Cocina</MenuItem>
-            <MenuItem value="dormitorio">Dormitorio</MenuItem>
-            <MenuItem value="salon">Salón</MenuItem>
-            <MenuItem value="baño">Salón</MenuItem>
-            <MenuItem value="salon">Baño</MenuItem>
-            <MenuItem value="aseo">Aseo</MenuItem>
-            <MenuItem value="patio">Patio</MenuItem>
-            <MenuItem value="estudio">Estudio</MenuItem>
+            <MenuItem value="Cocina 🍳">Cocina 🍳</MenuItem>
+            <MenuItem value="Dormitorio 🛏️">Dormitorio 🛏️</MenuItem>
+            <MenuItem value="Salón 🛋️">Salón 🛋️</MenuItem>
+            <MenuItem value="Baño 🚽">Baño 🚽</MenuItem>
+            <MenuItem value="Aseo 🚿">Aseo 🚿</MenuItem>
+            <MenuItem value="Patio 🎾">Patio 🎾</MenuItem>
+            <MenuItem value="Estudio 📚">Estudio 📚</MenuItem>
           </Select>
         </FormControl>
         <TextField
@@ -99,10 +98,10 @@ export default function CrearTareaModal({ open, onClose }) {
             <MenuItem value="completada">Completada</MenuItem>
           </Select>
         </FormControl>
-        <Button variant="outlined" onClick={onClose} style={{ marginRight: '10px' }}>
+        <Button variant="outlined" onClick={onClose} style={{ marginRight: '10px', borderRadius: '8px',  borderColor: 'green', color: 'green', }}>
           Cancelar
         </Button>
-        <Button variant="contained" onClick={handleCrearTarea}>
+        <Button variant="contained" onClick={handleCrearTarea} style={{ backgroundColor: 'green', color: 'white', borderRadius: '8px' }}>
           Crear
         </Button>
       </div>
