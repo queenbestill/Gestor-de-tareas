@@ -36,16 +36,13 @@ function Registro() {
   }
 
   return (
-    <div className="registercontainer">
-     
-      <img src="public/ilustracion3.jpeg" className="image" />
       <div className="card">
         <h1>Regístrate</h1>
         <h2>¡Estás a un clic ordenar tus tareas de la forma más óptima!</h2>
         <form className="form">
           {<input
             /* className="email" */
-            placeholder="¿Cuál es tu e-mail?"
+            placeholder="¿Cuál es tu email?"
             type="email"
             onChange={function (event) {
               setEmail(event.target.value);
@@ -88,7 +85,6 @@ function Registro() {
           </a>
         </form>
       </div>
-    </div>
   );
 }
 

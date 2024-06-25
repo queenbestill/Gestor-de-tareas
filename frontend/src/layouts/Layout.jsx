@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import AppBarResponsive from "../components/AppBarResponsive";
+import Footer from "../components/Footer/Footer";
 
 function Root() {
   return (
@@ -10,7 +11,7 @@ function Root() {
       <section>
         <Outlet />
       </section>
-      <div>I am the Footer</div>
+      <Footer/>
     </div>
   );
 }
