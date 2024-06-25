@@ -25,41 +25,30 @@ function Login() {
   };
 
   return (
-    <div>
-      <header className="container">
-      <div className="izquierda">
-        <img src="/ilustracion3.jpg" alt="ilustration" />
+      <div className="card">
+        <h1>Login</h1>
+        <form className="form" onSubmit={handleSubmit}>
+          <input
+            placeholder="¿Cuál es tu email?"
+            type="email"
+            id="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            required
+          />
+          <input
+            placeholder="Contraseña"
+            type="password"
+            id="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            required
+          />
+          <button className="registro" type="submit">
+            Login
+          </button>
+        </form>
       </div>
-      <div>
-        <div className="login-container">
-          <h1>Login</h1>
-          <form onSubmit={handleSubmit}>
-            <div className="input-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div className="input-group">
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-            <button type="submit">Login</button>
-          </form>
-        </div>
-      </div>
-    </header>
-    </div>
   );
 }
 

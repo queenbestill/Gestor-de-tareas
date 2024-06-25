@@ -24,7 +24,7 @@ const Tareas = sequelize.define('Tareas', {
     
   },
   estado: {
-    type: DataTypes.BOOLEAN,
+    type: DataTypes.STRING(255),
     default: false
   },
  

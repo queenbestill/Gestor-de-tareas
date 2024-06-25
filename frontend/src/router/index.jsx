@@ -9,7 +9,7 @@ import Listas from "../pages/listas/Listas";
 import Mistareas from "../pages/MisTareas/MisTareas";
 import Root from '../layouts/Layout'
 
-import Tareas from "../pages/MisTareas/MisTareas";
+import Tareas from "../pages/tareas/Tareas";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: "/home",
+        path: "/",
         element: <Home />,
       },
       {
