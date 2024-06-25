@@ -46,47 +46,38 @@ function CrearGrupo() {
   };
 
   return (
-    <section className="container-crear-grupo">
-      <div className="izquierda">
-        <img src="../../../public/ilustracion3.jpg" alt="illustration" />
-      </div>
-      <div className="container-crear-grupo-titulo">
-        <h1>Crea tu grupo familiar</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="input-group">
-            <label htmlFor="groupName">Nombre del Grupo</label>
-            <input
-              type="text"
-              id="groupName"
-              value={groupName}
-              onChange={(e) => setGroupName(e.target.value)}
-              required
-            />
-          </div>
-          <div className="input-group">
-            <label htmlFor="stays">Estancias</label>
-            <input
-              type="text"
-              id="stays"
-              value={stays}
-              onChange={(e) => setStays(e.target.value)}
-              required
-            />
-          </div>
-          <div className="input-group">
-            <label htmlFor="members">Miembros</label>
-            <input
-              type="text"
-              id="members"
-              value={members}
-              onChange={(e) => setMembers(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit">Crear grupo</button>
-        </form>
-      </div>
-    </section>
+    <div className="card">
+      <h1>Crea tu grupo familiar</h1>
+      <form className="form" onSubmit={handleSubmit}>
+        <input
+          placeholder="Nombre del Grupo"
+          type="text"
+          id="groupName"
+          value={groupName}
+          onChange={(event) => setGroupName(event.target.value)}
+          required
+        />
+        <input
+          placeholder="Estancias"
+          type="text"
+          id="stays"
+          value={stays}
+          onChange={(event) => setStays(event.target.value)}
+          required
+        />
+        <input
+          placeholder="Miembros"
+          type="text"
+          id="members"
+          value={members}
+          onChange={(event) => setMembers(event.target.value)}
+          required
+        />
+        <button className="registro" type="submit">
+          Crear grupo
+        </button>
+      </form>
+    </div>
   );
 }
 
