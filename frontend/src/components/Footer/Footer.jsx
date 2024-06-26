@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import './Footer.css'; 
 
 function Footer() {
   return (
-    <div>Footer</div>
+    <footer>Hecho con 🫀 por Patri, Ely y Natalia</footer>
   )
 }
 
