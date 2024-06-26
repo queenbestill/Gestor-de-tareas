@@ -106,6 +106,7 @@ async function deleteTarea(req, res) {
 		if (tarea) {
 			return res.status(200).json('Tarea eliminada')
 		} else {
+			console.log('holis')
 			return res.status(404).send('No se ha encontrado la tarea')
 		}
 	} catch (error) {
