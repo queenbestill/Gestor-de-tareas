@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { obtenerMisTareas } from "../../services/tareas.service";
-import "./MisTareas.css"; 
+import "./MisTareas.css";
 import NuevaTareaButton from "../../components/NuevaTareaButton";
+import { Dialog, DialogContent } from "@mui/material";
 
-const Tareas = () => {
+export default function MisTareas({ open, onClose }) {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState({
     prioridad: "todas",
@@ -73,90 +74,104 @@ const Tareas = () => {
   });
 
   return (
-    <div className="card">
-      <h1>Mis Tareas</h1>
-      <form className="form">
-        <NuevaTareaButton />
-        <div className="filters"></div>
-        <table className="task-table">
-          <thead>
-            <tr>
-              <th></th>
-              <th className="taskStyle"></th>
-              <th>
-                {" "}
-                <select
-                  onChange={(e) =>
-                    handleFilterChange("prioridad", e.target.value)
-                  }
-                >
-                  <option value="todas">Todas las prioridades</option>
-                  <option value="alta">Alta</option>
-                  <option value="media">Media</option>
-                  <option value="baja">Baja</option>
-                </select>
-              </th>
-              <th>
-                <select
-                  onChange={(e) =>
-                    handleFilterChange("estancia", e.target.value)
-                  }
-                >
-                  <option value="todas">Todas las estancias</option>
-                  <option value="salón">Salón</option>
-                  <option value="cocina">Cocina</option>
-                  <option value="baño">Baño</option>
-                  <option value="dormitorio">Dormitorio</option>
-                  <option value="patio">Patio</option>
-                  <option value="garage">Garage</option>
-                </select>
-              </th>
-              <th>
-                <select
-                  onChange={(e) => handleFilterChange("vence", e.target.value)}
-                >
-                  <option value="todas">Todas las fechas</option>
-                  <option value="hoy">Hoy</option>
-                  <option value="semana">En una semana</option>
-                  <option value="dosSemanas">En dos semanas</option>
-                </select>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredTasks.map((task) => (
-              <tr className={task.completada ? "completed" : ""} key={task.id}>
-                <td>
-                  <input
-                    type="checkbox"
-                    checked={task.completada}
-                    onChange={() => toggleComplete(task.id)}
-                  />
-                </td>
-                <td
-                  onClick={() =>
-                    editTask(task.id, prompt("Edit Task", task.titulo))
-                  }
-                  style={{ cursor: "pointer" }}
-                >
-                  {task.titulo}
-                </td>
-                <td>{task.prioridad}</td>
-                <td>{task.categoria}</td>
-                <td>{task.fecha_vencimiento}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <button
-          className="back"
-          onClick={() => (window.location.href = "/listas")}
-        >
-          Volver
-        </button>
-      </form>
-    </div>
+    <Dialog
+      open={open}
+      onClose={onClose}
+      PaperProps={{
+        style: {
+          maxWidth: "800px",
+          width: "90%",
+        },
+      }}
+    >
+      <DialogContent>
+        <div className="card2">
+          <h1>Mis Tareas</h1>
+          <form className="form">
+            <div className="filters"></div>
+            <table className="task-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th className="taskStyle"></th>
+                  <th>
+                    <select
+                      onChange={(e) =>
+                        handleFilterChange("prioridad", e.target.value)
+                      }
+                    >
+                      <option value="todas">Todas las prioridades</option>
+                      <option value="alta">Alta</option>
+                      <option value="media">Media</option>
+                      <option value="baja">Baja</option>
+                    </select>
+                  </th>
+                  <th>
+                    <select
+                      onChange={(e) =>
+                        handleFilterChange("estancia", e.target.value)
+                      }
+                    >
+                      <option value="todas">Todas las estancias</option>
+                      <option value="salón">Salón</option>
+                      <option value="cocina">Cocina</option>
+                      <option value="baño">Baño</option>
+                      <option value="dormitorio">Dormitorio</option>
+                      <option value="patio">Patio</option>
+                      <option value="garage">Garage</option>
+                    </select>
+                  </th>
+                  <th>
+                    <select
+                      onChange={(e) =>
+                        handleFilterChange("vence", e.target.value)
+                      }
+                    >
+                      <option value="todas">Todas las fechas</option>
+                      <option value="hoy">Hoy</option>
+                      <option value="semana">En una semana</option>
+                      <option value="dosSemanas">En dos semanas</option>
+                    </select>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredTasks.map((task) => (
+                  <tr
+                    className={task.completada ? "completed" : ""}
+                    key={task.id}
+                  >
+                    <td>
+                      <input
+                        type="checkbox"
+                        checked={task.completada}
+                        onChange={() => toggleComplete(task.id)}
+                      />
+                    </td>
+                    <td
+                      onClick={() =>
+                        editTask(task.id, prompt("Edit Task", task.titulo))
+                      }
+                      style={{ cursor: "pointer" }}
+                    >
+                      {task.titulo}
+                    </td>
+                    <td>{task.prioridad}</td>
+                    <td>{task.categoria}</td>
+                    <td>{task.fecha_vencimiento}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <button
+              className="back"
+              onClick={() => (window.location.href = "/listas")}
+            >
+              Volver
+            </button>
+          </form>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
-};
-
-export default Tareas;
+}

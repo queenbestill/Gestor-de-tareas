@@ -64,7 +64,7 @@ button:hover {
 
 .task-table th,
 .task-table td {
-  border: 1px solid orange;
+  border: 1px solid green;
   padding: 10px;
   text-align: center;
 }
@@ -103,7 +103,7 @@ button.back {
   width: 200px;
   margin: 20px auto 0;
   padding: 10px;
-  background-color: #6c757d;
+  background-color: green;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -111,5 +111,5 @@ button.back {
 }
 
 button.back:hover {
-  background-color: #5a6268;
+  background-color: rgb(51, 167, 51);
 }

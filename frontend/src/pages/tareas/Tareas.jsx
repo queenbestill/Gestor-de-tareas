@@ -7,6 +7,15 @@ import { obtenerMisTareas } from '../../services/tareas.service'; // Asegúrate 
 
 function Tareas() {
   const [tareas, setTareas] = useState([]);
+const [openModal, setOpenModal] = React.useState(false);
+
+const handleOpenModal = () => {
+  setOpenModal(true);
+};
+
+const handleCloseModal = () => {
+  setOpenModal(false);
+};
 
   useEffect(() => {
     async function fetchTareas() {
@@ -31,7 +40,6 @@ function Tareas() {
       <div style={{ display: 'flex', marginBottom: '10px' }}>
         <NuevaTareaButton />
         <TodasMisTareasButton />
-        {/* <TareasFamiliaButton /> */}
       </div>
       <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
         <CheckboxList tareas={tareas} handleToggle={handleToggle} />
