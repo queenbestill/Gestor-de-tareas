@@ -9,7 +9,7 @@ export async function crearGrupo(unidadFamiliarData) {
       },
     });
     console.log("se envia el grupo familiar");
-    return response.data; // Suponiendo que el backend devuelve los datos de la tarea creada
+    return response.data; 
   } catch (error) {
     console.error("Error al crear la tarea:", error.message);
     throw error.message;

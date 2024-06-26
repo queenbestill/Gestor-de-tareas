@@ -22,6 +22,8 @@ function Login() {
     navigate("/tareas");
     console.log(user)
 
+    navigate("/creargrupo");
+    console.log(user);
   };
 
   return (

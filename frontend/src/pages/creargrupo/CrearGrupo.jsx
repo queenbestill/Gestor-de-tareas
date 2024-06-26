@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CrearGrupo.css";
+import { crearGrupo } from "../../services/unidadFamiliar.service";
 
 
 function CrearGrupo() {
@@ -99,7 +100,7 @@ function CrearGrupo() {
             />
           </div>
           <div className="input-group">
-            <label htmlFor="stays">Estancias</label>
+            <label htmlFor="stays">Estancias <span className="span-de-agregar-estancia">Presiona CTRL para agregar más de una</span></label>
             <select
               id="stays"
               multiple
