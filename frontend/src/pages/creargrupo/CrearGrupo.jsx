@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CrearGrupo.css";
-import { crearGrupo } from "../../services/unidadFamiliar.service";
+
 
 function CrearGrupo() {
   const [groupName, setGroupName] = useState("");
