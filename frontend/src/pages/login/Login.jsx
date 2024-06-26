@@ -16,11 +16,12 @@ function Login() {
     console.log("Password:", password);
     const response = await login(email, password);
 
-    localStorage.setItem("token", response.token);
-    setUser(response.user);
+    localStorage.setItem('token', response.token)
+    setUser(response.user)
+    
+    navigate('/')
+    console.log(user)
 
-    navigate("/creargrupo");
-    console.log(user);
   };
 
   return (

@@ -6,8 +6,20 @@ import MenuIcon from '@mui/icons-material/Menu';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const pages = ['Products', 'Pricing', 'Blog'];
+
+const Header = () => {
+  return (
+    <header>
+      <Link to="/">
+        <img src="logo.png" alt="Logo" />
+        <Typography variant="h6">easytask</Typography>
+      </Link>
+    </header>
+  );
+};
 
 function AppBarResponsive() {
     const [anchorElNav, setAnchorElNav] = useState(null);
@@ -24,8 +36,6 @@ function AppBarResponsive() {
     };
 
     const isLoggedIn = Boolean(localStorage.getItem('token'));
-  
- 
   
     return (
       <AppBar position="static">
