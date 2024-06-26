@@ -1,8 +1,6 @@
 const Tareas = require("../models/tarea.model");
 const User = require("../models/user.model");
 
-// NECESITO GET TAREAS BY... QUE?  EN PRINCIPIO NO HACE FALTA HACER MAS GET, UTILIZAR UN QUERY PARAM
-//GET ALL TAREAS
 async function getTareas(req, res) {
   try {
     const tareas = await Tareas.findAll();
@@ -14,11 +12,9 @@ async function getTareas(req, res) {
   }
 }
 
-//GET ONE TAREA BY ID
-
 async function getOneTarea(req, res) {
   try {
-    const tarea = await Tareas.findByPk(req.params.id); // DUDAS DE findByPk
+    const tarea = await Tareas.findByPk(req.params.id); 
     if (tarea) {
       return res.status(200).json(tarea);
     } else {
@@ -49,31 +45,28 @@ async function getTareasByUser(req, res) {
   }
 }
 
-// CREATE TAREA
 async function createTarea(req, res) {
   try {
     req.body.userId = res.locals.user.id;
     const tarea = await Tareas.create(req.body);
-    return res.status(201).json(tarea); // Devuelve la tarea creada con código 201 Created
+    return res.status(201).json(tarea); 
   } catch (error) {
     console.error("Error al crear la tarea:", error.message);
-    return res.status(500).send(error.message); // Devuelve un error 500 Internal Server Error si falla la creación
+    return res.status(500).send(error.message); 
   }
 }
 
 async function createTareaById(req, res) {
   try {
-    const userId = req.user.id; // Suponiendo que tienes un middleware que agrega el usuario al objeto req
-    const tareaData = { ...req.body, userId }; // Asignar userId a la tarea creada
+    const userId = req.user.id; 
+    const tareaData = { ...req.body, userId }; 
     const tarea = await Tareas.create(tareaData);
-    return res.status(201).json(tarea); // Devuelve la tarea creada con código 201 Created
+    return res.status(201).json(tarea); 
   } catch (error) {
     console.error("Error al crear la tarea:", error.message);
-    return res.status(500).send(error.message); // Devuelve un error 500 Internal Server Error si falla la creación
+    return res.status(500).send(error.message);
   }
 }
-
-// UPDATE TAREA DUDAS DUDAS DUDAS DUDAS DUDAS (PUT)
 
 async function updateTarea(req, res) {
   try {
@@ -95,7 +88,6 @@ async function updateTarea(req, res) {
   }
 }
 
-// DELETE TAREA DUDAS DUDAS DUDAS DUDAS DUDAS
 async function deleteTarea(req, res) {
   try {
     const tarea = await Tareas.destroy({
