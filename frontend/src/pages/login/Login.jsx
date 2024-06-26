@@ -19,7 +19,7 @@ function Login() {
     localStorage.setItem('token', response.token)
     setUser(response.user)
     
-    navigate('/home')
+    navigate('/')
     console.log(user)
 
   };
