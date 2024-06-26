@@ -1,6 +1,4 @@
 const UnidadFamiliar = require("../models/unidadFamiliar.model");
-const Estancia = require("../models/estancia.model");
-const Miembro = require("../models/miembro.model");
 
 async function getUnidadFamiliar(req, res) {
   try {
@@ -15,41 +13,10 @@ async function getUnidadFamiliar(req, res) {
 
 async function createUnidadFamiliar(req, res) {
   try {
-    const { nombre, estancias, miembros } = req.body;
+    const unidadFamiliar = await UnidadFamiliar.create(req.params.id);
+    if (!unidadFamiliar) return res.status(204).send([]);
 
-    if (
-      !nombre ||
-      !estancias ||
-      !estancias.length ||
-      !miembros ||
-      !miembros.length
-    )
-      return res
-        .status(400)
-        .json({ message: "Nombre, estancias y miembros son requeridos" });
-
-    const nuevaUnidadFamiliar = await UnidadFamiliar.create({ nombre });
-
-    if (!nuevaUnidadFamiliar)
-      return res
-        .status(400)
-        .json({ message: "Todos los campos son requeridos" });
-
-    for (const estanciaNombre of estancias) {
-      await Estancia.create({
-        nombre: estanciaNombre,
-        UnidadFamiliarId: nuevaUnidadFamiliar.id,
-      });
-    }
-
-    for (const miembroNombre of miembros) {
-      await Miembro.create({
-        nombre: miembroNombre,
-        UnidadFamiliarId: nuevaUnidadFamiliar.id,
-      });
-    }
-
-    res.status(201).json(nuevaUnidadFamiliar);
+    res.status(200).json(unidadFamiliar);
   } catch (error) {
     res.status(500).send(error);
   }

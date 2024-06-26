@@ -25,7 +25,7 @@ export async function crearNuevaTarea(tareaData) {
     console.log("se envia la tarea")
     return response.data; // Suponiendo que el backend devuelve los datos de la tarea creada
   } catch (error) {
-    console.error("Error al crear la tarea:", error.message);
+    console.error("No estas logueado", error.message);
     throw error.message;
   }
 }
