@@ -5,7 +5,17 @@
   height: auto; /* O un valor específico si no quieres que ocupe toda la pantalla */
   width: auto;/* O un valor específico si no quieres que ocupe toda la pantalla */
   background-image: url(../../../public/ilustracion3.jpeg);
-  height: 90vh;
+}
+
+.card2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Para centrar el contenido dentro de .card */
+  height: auto;
+  /* O un valor específico si no quieres que ocupe toda la pantalla */
+  width: auto;
+  /* O un valor específico si no quieres que ocupe toda la pantalla */
 }
 
 .card input {
