@@ -1,31 +1,31 @@
 .container-crear-grupo {
   display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
-  height: 100vh; /* Tomar toda la altura de la pantalla */
-  padding: 20px; /* Agregar algo de margen alrededor */
+  justify-content: center; 
+  align-items: center;
+  height: 100vh;
+  padding: 20px; 
   box-sizing: border-box;
 }
 
 .izquierda {
-  flex: 1; /* Tomar espacio igual */
+  flex: 1; 
   display: flex;
-  justify-content: center; /* Centrar la imagen horizontalmente */
-  align-items: center; /* Centrar la imagen verticalmente */
-  margin-right: 10px; /* Reducir el margen derecho para acercar al formulario */
+  justify-content: center; 
+  align-items: center;
+  margin-right: 10px; 
 }
 
 .izquierda img {
-  max-width: 100%; /* Asegurar que la imagen sea responsiva */
+  max-width: 100%; 
   height: auto;
-  max-height: 80%; /* Limitar la altura máxima para evitar excesivo tamaño */
+  max-height: 80%; 
 }
 
 .container-crear-grupo-titulo {
-  flex: 1.5; /* Tomar un poco más de espacio que la imagen */
+  flex: 1.5; 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrar los elementos del formulario */
+  align-items: center; 
   font-size: large;
 }
 
@@ -38,7 +38,7 @@
 
 .input-group {
   margin-bottom: 15px;
-  width: 90%; /* Aumentar el ancho de los elementos de entrada */
+  width: 130%; 
 }
 
 .input-group label {
@@ -48,24 +48,28 @@
 
 .input-group input {
   width: 100%;
-  padding: 10px; /* Aumentar el padding para una mejor apariencia y tacto */
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
 }
 
 button {
-  width: 90%; /* Hacer coincidir el ancho de la entrada */
-  padding: 12px; /* Aumentar el padding para un botón más grande y cómodo */
+  width: 90%; 
+  padding: 12px; 
   border: none;
   border-radius: 5px;
   background-color: #007bff;
   color: white;
   cursor: pointer;
-  margin-top: 10px; /* Espacio arriba del botón */
+  margin-top: 10px; 
   font-size: large;
 }
 
 button:hover {
   background-color: #0056b3;
+}
+
+.span-de-agregar-estancia {
+  font-size: x-small;
 }
