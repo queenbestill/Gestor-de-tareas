@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { signup } from '../../services/auth.service'
 import "./Registro.css";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../context/userContext";
 
 function Registro() {
   const [fullname, setFullname] = useState("");
@@ -19,9 +20,12 @@ function Registro() {
         if (
           /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password)
         ) {
-          await signup(email, fullname, password);
+          const response = await signup(email, fullname, password);
           setErrs("");
+          console.log(response)
+          localStorage.setItem('token', response.token)
           alert("¡Genial! Ya puedes empezar a ordenar tus tareas");
+          navigate('/tareas')
         } else {
           setErrs(
             "La contraseña debe tener al menos 8 caracteres: 1 caracter especial, 1 minúscula, 1 mayúscula"
@@ -36,55 +40,63 @@ function Registro() {
   }
 
   return (
-      <div className="card">
-        <h1>Regístrate</h1>
-        <h2>¡Estás a un clic ordenar tus tareas de la forma más óptima!</h2>
-        <form className="form">
-          {<input
+    <div className="card">
+      <h1>Regístrate</h1>
+      <h2>¡Estás a un clic ordenar tus tareas de la forma más óptima!</h2>
+      <form className="form">
+        {
+          <input
             /* className="email" */
             placeholder="¿Cuál es tu email?"
             type="email"
             onChange={function (event) {
               setEmail(event.target.value);
             }}
-          />}
-          <input
-            placeholder="¿Cómo te llamas?"
-            onChange={function (event) {
-              setFullname(event.target.value);
-            }}
           />
-          <input
-            placeholder="Contraseña"
-            type="password"
-            onChange={function (event) {
-              setPassword(event.target.value);
-            }}
-          />
+        }
+        <input
+          placeholder="¿Cómo te llamas?"
+          onChange={function (event) {
+            setFullname(event.target.value);
+          }}
+        />
+        <input
+          placeholder="Contraseña"
+          type="password"
+          onChange={function (event) {
+            setPassword(event.target.value);
+          }}
+        />
 
-          {password}
-          <input
-            placeholder="Repite tu contraseña"
-            type="password"
-            onChange={function (event) {
-              setDoublePass(event.target.value);
-            }}
-          />
+        {password}
+        <input
+          placeholder="Repite tu contraseña"
+          type="password"
+          onChange={function (event) {
+            setDoublePass(event.target.value);
+          }}
+        />
 
-          {errs && <p className="error">{errs}</p>}
+        {errs && <p className="error">{errs}</p>}
 
-          <button className="registro"
-          onClick={handleClick}>Registrarme</button>
+        <button className="registro" onClick={handleClick}>
+          Registrarme
+        </button>
 
-          <p>Ya tengo una cuenta </p>
-          <a
+        <p>
+          Ya tengo una cuenta{" "}
+          <span
+            style={{ cursor: "pointer", color: "blue" }}
+            
             onClick={function () {
               navigate("/login");
             }}
           >
-          </a>
-        </form>
-      </div>
+            Loggeate
+          </span>
+        </p>
+      </form>
+    </div>
   );
 }
 

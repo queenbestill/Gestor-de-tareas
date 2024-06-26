@@ -1,12 +1,8 @@
-
-
-/* Header Styles */
 .header-area {
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   position: fixed;
   width: 100%;
-
 }
 
 .header-area .container-home {
@@ -66,7 +62,7 @@
 
 /* Main Banner Styles */
 .main-banner {
-  background: linear-gradient(to bottom, #03a4ed, #fe3f40);
+  background: linear-gradient(to bottom, #83C5BE, #00AFB9);
   color: #fff;
   text-align: center;
   display: flex;
@@ -100,17 +96,17 @@
 }
 
 .text h2 {
-  font-size: 48px;
+  font-size: 4rem;
   margin-bottom: 20px;
 }
 
 .text h2 em {
   font-style: normal;
-  color: #03a4ed;
+  color: #0081A7;
 }
 
 .text h2 span {
-  color: #fe3f40;
+  color: #0081A7;
 }
 
 .text p {
@@ -157,7 +153,7 @@ form .main-button:hover {
 }
 
 .image img {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   border-radius: 10px;
   

@@ -13,13 +13,9 @@ function ContextWrapper({children}) {
     const fetchProfile = async () =>{
       const token = localStorage.getItem('token')
       if(token) {
-        try {
           const response = await getMyProfileContext()
-          SpeechSynthesisUtterance(response)
-        } catch (error) {
-          console.error('Error fetching profile:', error)
-          localStorage.removeItem('token')
-        }
+          setUser(response)
+     
       }
     }
     fetchProfile()

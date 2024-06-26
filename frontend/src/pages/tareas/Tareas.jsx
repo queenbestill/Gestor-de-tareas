@@ -1,16 +1,19 @@
 // components/Tareas.jsx
 
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import CheckboxList from "../../components/TareaCheckBox";
 import NuevaTareaButton from "../../components/NuevaTareaButton";
 import TodasMisTareasButton from "../../components/VerTodasLasTareasButton";
 // import TareasFamiliaButton from "../../components/TareasFamiliaButton"; // Puedes descomentar si es necesario
 
 import { obtenerMisTareas, borrarTarea } from '../../services/tareas.service';
+import { UserContext } from '../../context/userContext';
 
 function Tareas() {
   const [tareas, setTareas] = useState([]);
-const [openModal, setOpenModal] = React.useState(false);
+  const [openModal, setOpenModal] = React.useState(false);
+
+
 
 const handleOpenModal = () => {
   setOpenModal(true);
@@ -59,8 +62,8 @@ const handleCloseModal = () => {
         <NuevaTareaButton />
         <TodasMisTareasButton />
       </div>
-      <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
-        <CheckboxList tareas={tareas} handleToggle={handleToggle} deleteTask={handleDelete} />
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '10px', marginLeft: ' 40px' }}>
+        <CheckboxList tareas={tareas} handleToggle={handleToggle} deleteTask={handleDelete}/>
       </div>
     </div>
   );

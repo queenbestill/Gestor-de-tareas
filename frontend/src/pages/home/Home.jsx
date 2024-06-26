@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div>
-      <div className="header-area">
+      {/* <div className="header-area">
         <div className="container-home">
           <nav className="main-nav">
             <Link to="/" className="logo">
@@ -36,7 +36,7 @@ function Home() {
           </nav>
         </div>
       </div>
-
+ */}
       <section className="main-banner" id="top">
         <div className="container">
           <div className="content">
@@ -46,7 +46,7 @@ function Home() {
                 Tareas del <em>Hogar</em> <span>más</span> simples
               </h2>
               <p>Aquí es donde tus tareas se hacen más fácil.</p>
-              <form id="search" action="#" method="GET">
+              {/* <form id="search" action="#" method="GET">
                 <input
                   type="text"
                   name="address"
@@ -58,13 +58,13 @@ function Home() {
                 <button type="submit" className="main-button">
                   Empieza
                 </button>
-              </form>
+              </form> */}
             </div>
             <div className="image">
               <img
-                src="hombre reunion.png"
+                src="ilustracion3.jpeg"
                 alt="Hombre reunion"
-                className="image"
+
               />
             </div>
           </div>

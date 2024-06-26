@@ -6,6 +6,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
+import {toast} from 'react-hot-toast'
 import { crearNuevaTarea } from '../../services/tareas.service'; // Importa la función para crear nueva tarea
 
 export default function CrearTareaModal({ open, onClose }) {
@@ -30,6 +31,7 @@ export default function CrearTareaModal({ open, onClose }) {
 
       // Cierra el modal después de crear la tarea
       onClose();
+      toast("Tarea creada satisfactoriamente");
     } catch (error) {
       console.error("Error al crear la tarea:", error.message);
       // Aquí podrías manejar el error mostrando un mensaje al usuario, etc.

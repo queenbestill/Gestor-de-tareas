@@ -23,7 +23,7 @@ export default function CheckboxList({ tareas, handleToggle, deleteTask }) {
         <div
           key={index}
           style={{
-            width: "100vw",
+            width: "30vw",
             height: "80vh",
             padding: "20px",
             boxSizing: "border-box",

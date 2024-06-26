@@ -47,6 +47,17 @@ function Login() {
         <button className="registro" type="submit">
           Login
         </button>
+        <p>
+         ¿No tienes cuenta?{" "}
+          <span
+            style={{ cursor: "pointer", color: "blue" }}
+            onClick={function () {
+              navigate("/registro");
+            }}
+          >
+            Regístrate
+          </span>
+        </p>
       </form>
     </div>
   );

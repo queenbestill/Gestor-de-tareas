@@ -33,7 +33,7 @@ function AppBarResponsive() {
   };
 
   const handleLogout = () => {
-    // Aquí iría la lógica para cerrar sesión
+    localStorage.removeItem('token')
     navigate("/login");
   };
 
@@ -46,7 +46,7 @@ function AppBarResponsive() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{ backgroundColor: "#0081A7" }}>
       <Toolbar>
         <Link
           to="/"
@@ -58,11 +58,11 @@ function AppBarResponsive() {
           }}
         >
           <img
-            src="/logo.png"
+            src="/casa_logo.png"
             alt="EasyTask Logo"
-            style={{ height: 40, marginRight: 10 }}
+            style={{ height: 60, marginRight: 20 }}
           />
-          <Typography variant="h6" noWrap>
+          <Typography variant="h4" style={{ color: "white" }} noWrap>
             EasyTask
           </Typography>
         </Link>
@@ -91,12 +91,23 @@ function AppBarResponsive() {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            {pages.map((page) => (
-              <MenuItem key={page} onClick={() => handleMenuClick(page)}>
-                {page}
-              </MenuItem>
-            ))}
-            <MenuItem onClick={handleLogout}>Cerrar sesión</MenuItem>
+            {localStorage.getItem("token") ? (
+              <>
+                {pages.map((page) => (
+                  <MenuItem key={page} onClick={() => handleMenuClick(page)}>
+                    {page}
+                  </MenuItem>
+                ))}
+                <MenuItem onClick={handleLogout}>Cerrar sesión</MenuItem>
+              </>
+            ) : (
+              <>
+                <MenuItem onClick={() => navigate("/login")}>Login</MenuItem>
+                <MenuItem onClick={() => navigate("/registro")}>
+                  Signup
+                </MenuItem>
+              </>
+            )}
           </Menu>
         </div>
       </Toolbar>
