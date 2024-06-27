@@ -21,7 +21,7 @@ function Tareas() {
       }
     }
     fetchTareas();
-  }, [tareas]);
+  }, []);
 
   const handleToggle = (id) => {
     const newTareas = tareas.map((tarea) => {
