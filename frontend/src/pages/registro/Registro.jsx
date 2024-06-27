@@ -41,8 +41,7 @@ function Registro() {
 
   return (
     <div className="card">
-      <h1>Regístrate</h1>
-      <h2>¡Estás a un clic ordenar tus tareas de la forma más óptima!</h2>
+      <h1 style={{ color: '#00464d', marginTop: '7%'}}>¡Estás a un clic ordenar tus tareas de la forma más óptima!</h1>
       <form className="form">
         {
           <input
@@ -84,7 +83,7 @@ function Registro() {
         </button>
 
         <p>
-          Ya tengo una cuenta{" "}
+          Ya tengo una cuenta.{" "}
           <span
             style={{ cursor: "pointer", color: "blue" }}
             
@@ -92,7 +91,7 @@ function Registro() {
               navigate("/login");
             }}
           >
-            Loggeate
+            Acceder
           </span>
         </p>
       </form>

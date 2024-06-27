@@ -30,7 +30,6 @@ export default function NuevaTareaButton() {
         Crea una nueva tarea
       </Button>
 
-      {/* Renderiza el modal */}
       <CrearTareaModal open={openModal} onClose={handleCloseModal} />
     </div>
   );

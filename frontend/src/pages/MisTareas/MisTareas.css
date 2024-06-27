@@ -64,13 +64,13 @@ button:hover {
 
 .task-table th,
 .task-table td {
-  border: 1px solid green;
   padding: 10px;
   text-align: center;
+  background-color: #f9f9f9;;
 }
 
 .task-table th {
-  background-color: #f9f9f9;
+  background-color: #FFDDD2;
   color: #333;
 }
 
@@ -103,7 +103,8 @@ button.back {
   width: 200px;
   margin: 20px auto 0;
   padding: 10px;
-  background-color: green;
+  background-color: #00464d;
+  ;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -111,5 +112,5 @@ button.back {
 }
 
 button.back:hover {
-  background-color: rgb(51, 167, 51);
+  background-color: #83C5BE;
 }

@@ -26,7 +26,7 @@ function Login() {
 
   return (
     <div className="card">
-      <h1>Login</h1>
+      <h1 style={{ color: '#00464d' , marginTop: '7%'}}>¡Bienvenid@ de  nuevo!</h1>
       <form className="form" onSubmit={handleSubmit}>
         <input
           placeholder="¿Cuál es tu email?"
@@ -45,7 +45,7 @@ function Login() {
           required
         />
         <button className="registro" type="submit">
-          Login
+          Entrar
         </button>
         <p>
          ¿No tienes cuenta?{" "}

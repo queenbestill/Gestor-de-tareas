@@ -12,7 +12,7 @@ const Tareas = sequelize.define('Tareas', {
     type: DataTypes.STRING(255),
     allowNull: false
   },
-  categoria: { // ESTO SE REFIERE A LA ESTANCIA EN LA QUE SE HACE LA TAREA. EJ: COCINA, BAÑO, ETC
+  categoria: { 
     type: DataTypes.STRING(50),
     allowNull: false
   },

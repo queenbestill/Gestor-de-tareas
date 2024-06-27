@@ -3,6 +3,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   position: fixed;
   width: 100%;
+  
 }
 
 .header-area .container-home {
@@ -10,6 +11,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+
+
+
 }
 
 .main-nav {
@@ -71,7 +75,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
 }
 
 .main-banner .container-home {
@@ -79,13 +83,15 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  
 }
 
 .content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 95%;
+  
 }
 
 .text {

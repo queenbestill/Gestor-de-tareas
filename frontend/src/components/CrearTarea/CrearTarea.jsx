@@ -26,21 +26,18 @@ export default function CrearTareaModal({ open, onClose }) {
         estado,
       };
 
-      // Llama a la función para crear la nueva tarea en el backend
       await crearNuevaTarea(nuevaTarea);
 
-      // Cierra el modal después de crear la tarea
       onClose();
       toast("Tarea creada satisfactoriamente");
     } catch (error) {
       console.error("Error al crear la tarea:", error.message);
-      // Aquí podrías manejar el error mostrando un mensaje al usuario, etc.
     }
   };
 
   return (
     <Dialog open={open} onClose={onClose}>
-      <div style={{ padding: '20px' }}>
+      <div style={{ padding: '20px'}}>
         <h2 style={{ textAlign: 'center' }}> Añade una tarea a tu lista 📋</h2>
         <TextField
           label="Título"
@@ -100,10 +97,10 @@ export default function CrearTareaModal({ open, onClose }) {
             <MenuItem value="completada">Completada</MenuItem>
           </Select>
         </FormControl>
-        <Button variant="outlined" onClick={onClose} style={{ marginRight: '10px', borderRadius: '8px',  borderColor: 'green', color: 'green', }}>
+        <Button variant="outlined" onClick={onClose} style={{ marginRight: '10px', borderRadius: '8px',  borderColor: '#00464d', color: '#00464d', }}>
           Cancelar
         </Button>
-        <Button variant="contained" onClick={handleCrearTarea} style={{ backgroundColor: 'green', color: 'white', borderRadius: '8px' }}>
+        <Button variant="contained" onClick={handleCrearTarea} style={{ backgroundColor: '#00464d', color: 'white', borderRadius: '8px' }}>
           Crear
         </Button>
       </div>

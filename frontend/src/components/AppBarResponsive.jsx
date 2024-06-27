@@ -24,7 +24,7 @@ function AppBarResponsive() {
         navigate("/tareas");
         break;
       case "Ver mis tareas":
-        navigate("/mistareas");
+        navigate("/tareas");
         break;
       default:
         break;
