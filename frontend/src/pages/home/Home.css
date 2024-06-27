@@ -62,7 +62,10 @@
 
 /* Main Banner Styles */
 .main-banner {
-  background: linear-gradient(to bottom, #83C5BE, #00AFB9);
+  
+  /*background: linear-gradient(to bottom, #83C5BE, #00AFB9);*/
+  background-image: url('FONDO.png');
+  background-size: cover;
   color: #fff;
   text-align: center;
   display: flex;
@@ -91,27 +94,33 @@
 }
 
 .text h6 {
-  font-size: 24px;
+  font-size: 2rem;
   margin-bottom: 20px;
+text-shadow: 3px 3px 6px rgba(11, 70, 37, 0.083);
 }
 
 .text h2 {
-  font-size: 4rem;
+  font-size: 5em;
   margin-bottom: 20px;
+  color: #006D77;
+  text-shadow: 3px 3px 6px rgba(11, 70, 37, 0.083);
+  
 }
 
 .text h2 em {
   font-style: normal;
-  color: #0081A7;
+  color: #006D77;
 }
 
 .text h2 span {
-  color: #0081A7;
+  color: #006D77;
 }
 
 .text p {
-  font-size: 18px;
+  font-size: 2.5rem;
   margin-bottom: 20px;
+  color: #006D77;
+  text-shadow: 3px 3px 6px rgba(11, 70, 37, 0.083);
 }
 
 form {
@@ -150,6 +159,7 @@ form .main-button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: scale(1.1);
 }
 
 .image img {
