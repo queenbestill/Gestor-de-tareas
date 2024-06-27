@@ -63,9 +63,6 @@ function Registro() {
         <input
           placeholder="Contraseña"
           type="password"
-          onChange={function (event) {
-            setPassword(event.target.value);
-          }}
         />
 
         {password}
