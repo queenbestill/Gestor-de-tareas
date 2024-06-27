@@ -21,7 +21,7 @@ function Tareas() {
       }
     }
     fetchTareas();
-  }, []);
+  }, [tareas]);
 
   const handleToggle = (id) => {
     const newTareas = tareas.map((tarea) => {
@@ -43,14 +43,23 @@ function Tareas() {
     }
   };
 
+  // Agrupa las tareas por categoría
+  const tareasPorCategoria = tareas.reduce((acc, tarea) => {
+    const { categoria } = tarea;
+    if (!acc[categoria]) {
+      acc[categoria] = [];
+    }
+    acc[categoria].push(tarea);
+    return acc;
+  }, {});
+
   const sliderSettings = {
     dots: true,
     infinite: false,
     speed: 300,
-    slidesToShow: 3, 
+    slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: false,
-    
   };
 
   return (
@@ -68,15 +77,13 @@ function Tareas() {
         <TodasMisTareasButton />
       </div>
 
-
       <Slider {...sliderSettings}>
-        {tareas.map((tarea, index) => (
-          <div key={index} className="carousel-item">
+        {Object.entries(tareasPorCategoria).map(([categoria, tareas]) => (
+          <div key={categoria} className="carousel-item">
             <div className="tarea-content">
-              <div className="buttons"></div>
               <div className="tarea-list">
                 <CheckboxList
-                  tareas={[tarea]} 
+                  tareas={tareas}
                   handleToggle={handleToggle}
                   deleteTask={handleDelete}
                 />

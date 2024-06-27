@@ -30,6 +30,23 @@ export async function crearNuevaTarea(tareaData) {
   }
 }
 
+export async function actualizarTarea(id, tareaData) {
+  try {
+    const response = await api.patch(`/tarea/${id}`, tareaData, {
+      headers: {
+        Authorization: localStorage.getItem('token'),
+        'Content-Type': 'application/json',
+      },
+    });
+    console.log("Tarea actualizada correctamente")
+    return response.data; // Suponiendo que el backend devuelve los datos de la tarea creada
+  } catch (error) {
+    console.error("Error al actualizar la tarea:", error.message);
+    throw error.message;
+  }
+}
+
+
 export async function borrarTarea(id) {
   try {
     const response = await api.delete(`/tarea/${id}`, {

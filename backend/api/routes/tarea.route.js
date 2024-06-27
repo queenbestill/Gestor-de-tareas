@@ -17,8 +17,8 @@ router.get("/mistareas", checkAuth, getTareasByUser);
 router.get("/:id", getOneTarea);
 router.post("/", checkAuth, createTarea);
 router.post("/createbyid", checkAuth, createTareaById);
-router.patch('/:id', updateTarea) 
-router.delete('/:id', deleteTarea) 
+router.patch('/:id', checkAuth, updateTarea) 
+router.delete('/:id', checkAuth, deleteTarea) 
 
 module.exports = router;
 

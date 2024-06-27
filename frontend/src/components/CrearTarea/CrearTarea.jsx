@@ -8,6 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import {toast} from 'react-hot-toast'
 import { crearNuevaTarea } from '../../services/tareas.service'; // Importa la función para crear nueva tarea
+import { useNavigate } from 'react-router-dom';
 
 export default function CrearTareaModal({ open, onClose }) {
   const [titulo, setTitulo] = useState('');
@@ -15,7 +16,7 @@ export default function CrearTareaModal({ open, onClose }) {
   const [fechaVencimiento, setFechaVencimiento] = useState('');
   const [prioridad, setPrioridad] = useState('');
   const [estado, setEstado] = useState('');
-
+  const navigate = useNavigate()
   const handleCrearTarea = async () => {
     try {
       const nuevaTarea = {
@@ -30,6 +31,7 @@ export default function CrearTareaModal({ open, onClose }) {
 
       onClose();
       toast("Tarea creada satisfactoriamente");
+      window.location.reload()
     } catch (error) {
       console.error("Error al crear la tarea:", error.message);
     }

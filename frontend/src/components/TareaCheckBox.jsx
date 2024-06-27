@@ -1,6 +1,4 @@
-// components/TareaCheckBox.jsx
-
-import React from "react";
+import React, { useState } from "react";
 import {
   Checkbox,
   IconButton,
@@ -9,12 +7,32 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  TextField,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from '@mui/icons-material/Edit';
 import AnadirTareaButtonCheckbox from './AnadirTareaButtonCheckbox';
+import { actualizarTarea } from "../services/tareas.service"
 
 export default function CheckboxList({ tareas, handleToggle, deleteTask }) {
+  const [editingId, setEditingId] = useState(null);
+  const [editedTitle, setEditedTitle] = useState("");
+
+  const handleEditClick = (id, titulo) => {
+    setEditingId(id);
+    setEditedTitle(titulo);
+  };
+
+  const handleSaveClick = async (id) => {
+    try {
+      await actualizarTarea(id, { titulo: editedTitle });
+      setEditingId(null); // Finaliza el modo de edición
+      // Aquí podrías actualizar el estado de las tareas en el componente padre si es necesario
+    } catch (error) {
+      console.error("Error al actualizar la tarea:", error.message);
+    }
+  };
+
   const categoriasUnicas = [...new Set(tareas.map((tarea) => tarea.categoria))];
 
   return (
@@ -54,17 +72,27 @@ export default function CheckboxList({ tareas, handleToggle, deleteTask }) {
                         key={tarea.id}
                         secondaryAction={
                           <div style={{ display: 'flex', alignItems: 'center' }}>
-                             <IconButton edge="end" aria-label="edit" style={{display: 'flex', padding: '10px', margin: '10px', width: '0px', borderRadius: '5px'}}>
-                              <EditIcon />
-                            </IconButton>
-                            <IconButton
-                              edge="end"
-                              aria-label="delete"
-                              style={{ display: 'flex', padding: '10px', margin: '10px', width: '0px', borderRadius: '5px' }}
-                              onClick={() => deleteTask(tarea.id)} // Llama a deleteTask con el ID de la tarea
-                            >
-                              <DeleteIcon />
-                            </IconButton>
+                            {editingId === tarea.id ? (
+                              <>
+                               
+                                  <span style={{cursor:"pointer"}} onClick={() => handleSaveClick(tarea.id)} role="img" aria-label="save">💾</span>
+                                
+                              </>
+                            ) : (
+                              <>
+                                <IconButton edge="end" aria-label="edit" style={{ display: 'flex', padding: '10px', margin: '10px', width: '0px', borderRadius: '5px' }} onClick={() => handleEditClick(tarea.id, tarea.titulo)}>
+                                  <EditIcon />
+                                </IconButton>
+                                <IconButton
+                                  edge="end"
+                                  aria-label="delete"
+                                  style={{ display: 'flex', padding: '10px', margin: '10px', width: '0px', borderRadius: '5px' }}
+                                  onClick={() => deleteTask(tarea.id)} // Llama a deleteTask con el ID de la tarea
+                                >
+                                  <DeleteIcon />
+                                </IconButton>
+                              </>
+                            )}
                           </div>
                         }
                         disablePadding
@@ -87,7 +115,15 @@ export default function CheckboxList({ tareas, handleToggle, deleteTask }) {
                               style={{ display: 'flex', padding: '10px', margin: '10px', width: '0px', borderRadius: '5px' }}
                             />
                           </ListItemIcon>
-                          <ListItemText id={labelId} primary={tarea.titulo} />
+                          {editingId === tarea.id ? (
+                            <TextField
+                              value={editedTitle}
+                              onChange={(e) => setEditedTitle(e.target.value)}
+                              fullWidth
+                            />
+                          ) : (
+                            <ListItemText id={labelId} primary={tarea.titulo} />
+                          )}
                         </ListItemButton>
                       </ListItem>
                     );
