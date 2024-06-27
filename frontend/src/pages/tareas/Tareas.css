@@ -1,0 +1,20 @@
+/* Tareas.css */
+.carousel-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.variable-width {
+    display: flex;
+    overflow: hidden;
+    /* Asegúrate de que el contenido no desborde */
+}
+
+.carousel-item {
+    width: auto;
+    /* Ajusta el ancho según sea necesario */
+}
+
+.button-container{
+    display: flex;
+}

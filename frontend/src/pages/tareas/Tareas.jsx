@@ -1,27 +1,15 @@
-// components/Tareas.jsx
-
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import CheckboxList from "../../components/TareaCheckBox";
 import NuevaTareaButton from "../../components/NuevaTareaButton";
 import TodasMisTareasButton from "../../components/VerTodasLasTareasButton";
-// import TareasFamiliaButton from "../../components/TareasFamiliaButton"; // Puedes descomentar si es necesario
-
-import { obtenerMisTareas, borrarTarea } from '../../services/tareas.service';
-import { UserContext } from '../../context/userContext';
+import { obtenerMisTareas, borrarTarea } from "../../services/tareas.service";
+import "./Tareas.css";
 
 function Tareas() {
   const [tareas, setTareas] = useState([]);
-  const [openModal, setOpenModal] = React.useState(false);
-
-
-
-const handleOpenModal = () => {
-  setOpenModal(true);
-};
-
-const handleCloseModal = () => {
-  setOpenModal(false);
-};
 
   useEffect(() => {
     async function fetchTareas() {
@@ -29,14 +17,14 @@ const handleCloseModal = () => {
         const data = await obtenerMisTareas();
         setTareas(data); // Asigna los datos obtenidos de la API a 'tareas'
       } catch (error) {
-        console.error('Error fetching tareas:', error);
+        console.error("Error fetching tareas:", error);
       }
     }
     fetchTareas();
   }, []);
 
   const handleToggle = (id) => {
-    const newTareas = tareas.map(tarea => {
+    const newTareas = tareas.map((tarea) => {
       if (tarea.id === id) {
         return { ...tarea, completed: !tarea.completed };
       }
@@ -48,7 +36,7 @@ const handleCloseModal = () => {
   const handleDelete = async (id) => {
     try {
       await borrarTarea(id);
-      setTareas(tareas.filter(tarea => tarea.id !== id));
+      setTareas(tareas.filter((tarea) => tarea.id !== id));
       console.log("Tarea eliminada con éxito");
     } catch (error) {
       console.error("Error al intentar eliminar la tarea:", error);
@@ -56,15 +44,61 @@ const handleCloseModal = () => {
     }
   };
 
+  // Configuración del slider
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3, // Mostrar 3 slides al mismo tiempo
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <div style={{ padding: '10px', backgroundImage: 'url("/FondoTareas.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-      <div style={{ display: 'flex', marginBottom: '10px' }}>
+    <div
+      style={{
+        padding: "10px",
+        backgroundImage: 'url("/FondoTareas.jpg")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div style={{ display: "flex", marginBottom: "10px" }}>
         <NuevaTareaButton />
         <TodasMisTareasButton />
       </div>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '10px', marginLeft: ' 40px' }}>
-        <CheckboxList tareas={tareas} handleToggle={handleToggle} deleteTask={handleDelete}/>
-      </div>
+
+      {/* Slider de tareas */}
+      <Slider {...sliderSettings}>
+        {tareas.map((tarea, index) => (
+          <div key={index} className="carousel-item">
+            <div className="tarea-content">
+              <div className="buttons"></div>
+              <div className="tarea-list">
+                <CheckboxList
+                  tareas={[tarea]} // Asegúrate de pasar solo una tarea a CheckboxList
+                  handleToggle={handleToggle}
+                  deleteTask={handleDelete}
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 }
