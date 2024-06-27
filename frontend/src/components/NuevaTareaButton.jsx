@@ -21,7 +21,7 @@ export default function NuevaTareaButton() {
         style={{
           width: '200px',
           height: '50px', 
-          backgroundColor: 'green', 
+          backgroundColor: '#00464d', 
           borderRadius: '10px', 
           color: 'white', 
           border: 'none', 

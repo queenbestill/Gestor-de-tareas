@@ -84,6 +84,7 @@ export default function CheckboxList({ tareas, handleToggle, deleteTask }) {
                               tabIndex={-1}
                               disableRipple
                               inputProps={{ "aria-labelledby": labelId }}
+                              style={{ display: 'flex', padding: '10px', margin: '10px', width: '0px', borderRadius: '5px' }}
                             />
                           </ListItemIcon>
                           <ListItemText id={labelId} primary={tarea.titulo} />

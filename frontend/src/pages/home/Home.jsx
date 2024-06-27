@@ -41,11 +41,11 @@ function Home() {
         <div className="container">
           <div className="content">
             <div className="text">
-              <h6>Bienvenido a EasyTask</h6>
+            <h6>¡Bienvenido a EasyTask!</h6>
               <h2>
-                Tareas del <em>Hogar</em> <span>más</span> simples
+              Domina tus Tareas del Hogar
               </h2>
-              <p>Aquí es donde tus tareas se hacen más fácil.</p>
+                <p>Convierte tus listas de tareas en logros diarios con EasyTask.</p>
               {/* <form id="search" action="#" method="GET">
                 <input
                   type="text"
@@ -62,7 +62,7 @@ function Home() {
             </div>
             <div className="image">
               <img
-                src="ilustracion3.jpeg"
+                src="Vista2.png"
                 alt="Hombre reunion"
 
               />

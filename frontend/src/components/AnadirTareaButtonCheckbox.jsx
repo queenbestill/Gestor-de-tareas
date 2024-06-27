@@ -15,7 +15,7 @@ export default function AnadirTareaButtonCheckbox() {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-    <Button onClick={handleOpenModal} style={{color: 'green', textAlign: 'center', textTransform: 'none' }}>
+    <Button onClick={handleOpenModal} style={{color: '#00464d', textAlign: 'center', textTransform: 'none' }}>
     ✅ Añadir una tarea nueva
     </Button>
     <CrearTareaModal open={openModal} onClose={handleCloseModal} />

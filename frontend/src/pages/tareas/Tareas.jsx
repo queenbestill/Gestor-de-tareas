@@ -71,7 +71,7 @@ function Tareas() {
     <div
       style={{
         padding: "10px",
-        backgroundImage: 'url("/FondoTareas.jpg")',
+        backgroundImage: 'url("/FONDO.png")',
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
