@@ -57,7 +57,7 @@ const handleCloseModal = () => {
   };
 
   return (
-    <div style={{ padding: '10px', backgroundImage: 'url("/FondoTareas.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+    <div style={{ padding: '10px', backgroundImage: 'url("/FONDO.png")', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
       <div style={{ display: 'flex', marginBottom: '10px' }}>
         <NuevaTareaButton />
         <TodasMisTareasButton />

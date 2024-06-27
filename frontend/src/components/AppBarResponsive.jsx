@@ -46,7 +46,7 @@ function AppBarResponsive() {
   };
 
   return (
-    <AppBar position="static" style={{ backgroundColor: "#0081A7" }}>
+    <AppBar position="static" style={{ backgroundColor: "#FFFFFF"}}>
       <Toolbar>
         <Link
           to="/"
@@ -62,7 +62,7 @@ function AppBarResponsive() {
             alt="EasyTask Logo"
             style={{ height: 60, marginRight: 20 }}
           />
-          <Typography variant="h4" style={{ color: "white" }} noWrap>
+          <Typography variant="h4" style={{ color: "#006D77" }} noWrap>
             EasyTask
           </Typography>
         </Link>
@@ -72,7 +72,7 @@ function AppBarResponsive() {
             aria-controls="menu-appbar"
             aria-haspopup="true"
             onClick={handleOpen}
-            color="inherit"
+            color="#006D77"
           >
             <MenuIcon />
           </IconButton>
